@@ -83,10 +83,25 @@ Full methodology in `research/expert-selection-log.md`
 ### Data Collection Workflow
 
 **YouTube Transcripts**
-Used `youtube-transcript-api` Python library via script built with Claude Code. Collected transcripts for Michael King, Ross Simmonds, and Gael Breton. Shiyam Sunder has no personal YouTube channel — his content is via LinkedIn and TripleDart blog instead.
+Used `youtube-transcript-api` Python library via script built with Claude Code (`research/youtube-transcripts/fetch_transcripts.py`). Collected transcripts for Michael King, Ross Simmonds, and Gael Breton. Shiyam Sunder has no personal YouTube channel — his content is via LinkedIn and TripleDart blog instead.
 
 **LinkedIn Posts**
 Collected manually — LinkedIn restricts automated scraping. Visited each expert's profile, filtered for AI + SEO posts from 2025-2026, saved post text, date, URL, and engagement in structured markdown files.
+
+### Scripts and Prompts
+
+**fetch_transcripts.py** — Python script built with Claude Code to fetch YouTube transcripts automatically using youtube-transcript-api library.
+
+**Claude Code Prompts Used:**
+
+Prompt 1 — YouTube Transcript Script:
+"Write a Python script that takes a list of YouTube video URLs, uses youtube-transcript-api to fetch each transcript, and saves each one as a markdown file in research/youtube-transcripts/<expert-name>/ with video title, URL, and full transcript text."
+
+Prompt 2 — Folder Structure:
+"Create folder structure for research project with research/linkedin-posts/, research/youtube-transcripts/, and research/other/ subfolders."
+
+**How Claude Code Was Used:**
+Claude Code wrote the initial versions of scripts. All research decisions — which experts to select, what content to collect, how to annotate — were made manually by me. AI was used as a tool to move faster, not to make decisions.
 
 ### Repository Structure
 100hires-portfolio/
